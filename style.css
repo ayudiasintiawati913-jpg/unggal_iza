@@ -1,0 +1,467 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#050505;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* Background */
+.background{
+    position:fixed;
+    inset:0;
+    background:linear-gradient(135deg,#050505,#101010,#000);
+    z-index:-2;
+}
+
+#stars{
+    position:fixed;
+    inset:0;
+    background:url("https://www.transparenttextures.com/patterns/stardust.png");
+    opacity:.2;
+    animation:move 60s linear infinite;
+    z-index:-1;
+}
+
+@keyframes move{
+    from{transform:translateY(0);}
+    to{transform:translateY(-500px);}
+}
+
+/* PIN */
+#pinScreen{
+    position:fixed;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    overflow:hidden;
+    background:linear-gradient(135deg,#000,#050505,#111,#000);
+}
+
+/* Cahaya bergerak */
+#pinScreen::before{
+    content:"";
+    position:absolute;
+    width:800px;
+    height:800px;
+    top:-300px;
+    left:-250px;
+    background:radial-gradient(circle,
+        rgba(255,255,255,.08),
+        transparent 70%);
+    filter:blur(80px);
+    animation:rotateLight 18s linear infinite;
+}
+
+/* Cahaya kedua */
+#pinScreen::after{
+    content:"";
+    position:absolute;
+    width:700px;
+    height:700px;
+    bottom:-250px;
+    right:-250px;
+    background:radial-gradient(circle,
+        rgba(255,92,141,.15),
+        transparent 70%);
+    filter:blur(90px);
+    animation:floatLight 8s ease-in-out infinite alternate;
+}
+
+@keyframes rotateLight{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+@keyframes floatLight{
+    from{
+        transform:translate(0,0);
+    }
+    to{
+        transform:translate(-70px,-40px);
+    }
+}
+
+.pinBox{
+    position:relative;
+    z-index:10;
+
+    width:350px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.15);
+    backdrop-filter:blur(25px);
+    border-radius:20px;
+    padding:40px;
+    text-align:center;
+    box-shadow:0 0 50px rgba(255,255,255,.08);
+}
+
+.lock{
+    font-size:50px;
+    margin-bottom:15px;
+    color:#fff;
+}
+
+.pinBox h1{
+    margin-bottom:10px;
+}
+
+.pinBox p{
+    color:#aaa;
+    margin-bottom:20px;
+}
+
+#pinInput{
+    width:100%;
+    padding:15px;
+    background:#111;
+    border:1px solid #333;
+    color:#fff;
+    border-radius:12px;
+    font-size:22px;
+    text-align:center;
+    outline:none;
+}
+
+.pinBox button{
+    width:100%;
+    margin-top:20px;
+    padding:15px;
+    background:#fff;
+    color:#000;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.pinBox button:hover{
+    transform:scale(1.05);
+}
+
+#errorPin{
+    margin-top:15px;
+    color:#ff5555;
+}
+
+/* Pesan PIN salah */
+#salahsayang{
+    margin-top:15px;
+    color:#ff4d6d;
+    font-weight:bold;
+    font-size:16px;
+    opacity:0;
+    transition:0.3s;
+    text-shadow:0 0 10px #ff4d6d;
+}
+
+/* Efek shake */
+.pinBox.shake{
+    animation: shake 0.5s;
+}
+
+@keyframes shake{
+    0%{transform:translateX(0);}
+    20%{transform:translateX(-10px);}
+    40%{transform:translateX(10px);}
+    60%{transform:translateX(-8px);}
+    80%{transform:translateX(8px);}
+    100%{transform:translateX(0);}
+}
+
+/* Input merah saat salah */
+.pinError{
+    border:2px solid #ff4d6d !important;
+    box-shadow:0 0 20px #ff4d6d;
+    animation: glow 0.6s;
+}
+
+@keyframes glow{
+    0%{box-shadow:0 0 0px #ff4d6d;}
+    50%{box-shadow:0 0 25px #ff4d6d;}
+    100%{box-shadow:0 0 15px #ff4d6d;}
+}
+
+/* Loading */
+#loading{
+    display:none;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.loading-card{
+    width:420px;
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    padding:40px;
+    text-align:center;
+}
+
+.loading-card h1{
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.loading-card p{
+    color:#bbb;
+    margin-bottom:25px;
+}
+
+.loading-card button{
+    padding:15px 40px;
+    border:none;
+    border-radius:40px;
+    background:#fff;
+    color:#000;
+    cursor:pointer;
+}
+
+/* Content */
+#content{
+    display:none;
+}
+
+section{
+    width:90%;
+    max-width:1100px;
+    margin:80px auto;
+}
+
+/* Hero */
+.hero{
+    text-align:center;
+    padding:100px 20px;
+}
+
+.hero h1{
+    font-size:65px;
+    text-shadow:0 0 20px rgba(255,255,255,.3);
+}
+
+.hero h2{
+    margin:15px 0;
+    color:#ff5c8d;
+}
+
+.hero p{
+    max-width:700px;
+    margin:auto;
+    color:#ccc;
+    line-height:1.8;
+}
+
+/* Gallery */
+.gallery h2,
+.surat h2,
+.gift h2,
+.qr h2{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.grid img{
+    width:100%;
+    border-radius:20px;
+    transition:.4s;
+    cursor:pointer;
+    box-shadow:0 10px 30px rgba(0,0,0,.5);
+}
+
+.grid img:hover{
+    transform:scale(1.05);
+}
+
+/* Surat */
+.surat{
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(15px);
+    padding:40px;
+    border-radius:20px;
+}
+
+.surat p{
+    color:#ddd;
+    line-height:2;
+    text-align:justify;
+}
+
+/* Gift */
+.gift{
+    text-align:center;
+}
+
+.gift button{
+    padding:18px 45px;
+    background:#fff;
+    color:#000;
+    border:none;
+    border-radius:40px;
+    cursor:pointer;
+    font-size:18px;
+    transition:.3s;
+}
+
+.gift button:hover{
+    transform:scale(1.08);
+}
+
+
+/* Footer */
+footer{
+    text-align:center;
+    padding:40px;
+    color:#888;
+}
+
+/* Love */
+#love-container{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+}
+
+/* Responsive */
+/* ===================================================
+   HERO BACKGROUND PREMIUM (HALAMAN PERTAMA SAJA)
+=================================================== */
+
+.hero{
+    position:relative;
+    overflow:hidden;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    isolation:isolate;
+    background:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,.08), transparent 30%),
+    radial-gradient(circle at 80% 30%, rgba(255,92,141,.08), transparent 35%),
+    radial-gradient(circle at 50% 80%, rgba(255,255,255,.05), transparent 30%),
+    linear-gradient(135deg,#000,#070707,#101010,#000);
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:900px;
+    height:900px;
+    top:-300px;
+    left:-250px;
+    background:radial-gradient(circle,
+    rgba(255,255,255,.08),
+    transparent 70%);
+    filter:blur(80px);
+    animation:heroRotate 25s linear infinite;
+    z-index:-1;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    width:700px;
+    height:700px;
+    bottom:-250px;
+    right:-200px;
+    background:radial-gradient(circle,
+    rgba(255,92,141,.12),
+    transparent 70%);
+    filter:blur(80px);
+    animation:heroFloat 10s ease-in-out infinite alternate;
+    z-index:-1;
+}
+
+.hero .pattern{
+    position:absolute;
+    inset:0;
+    background:
+    repeating-linear-gradient(
+        135deg,
+        rgba(255,255,255,.03) 0px,
+        rgba(255,255,255,.03) 2px,
+        transparent 2px,
+        transparent 40px
+    );
+    animation:patternMove 12s linear infinite;
+    opacity:.5;
+    z-index:-1;
+}
+
+.hero .dots{
+    position:absolute;
+    inset:0;
+    background-image:
+        radial-gradient(white 1px, transparent 1px);
+    background-size:45px 45px;
+    opacity:.15;
+    animation:dotsMove 25s linear infinite;
+    z-index:-1;
+}
+
+@keyframes heroRotate{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+@keyframes heroFloat{
+    from{
+        transform:translate(0,0);
+    }
+    to{
+        transform:translate(-60px,-40px);
+    }
+}
+
+@keyframes patternMove{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(80px);
+    }
+}
+
+@keyframes dotsMove{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(-80px);
+    }
+}
+
+#love-container{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:9999;
+}

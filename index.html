@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Musik -->
+    <audio id="music" loop>
+        <source src="Yovie Widianto, HIVI! - Semenjak Ada Dirimu (Official Music Video).mp3" type="audio/mp3">
+    </audio>
+
+    <!-- Background -->
+    <div class="background"></div>
+
+    <!-- Efek Bintang -->
+    <div id="stars"></div>
+
+    <!-- ================= PIN ================= -->
+
+    <div id="pinScreen">
+
+        <div class="pinBox">
+
+            <i class="fa-solid fa-lock lock"></i>
+
+            <h1>Private Birthday</h1>
+
+            <p>Masukkan PIN untuk membuka surprise spesial ❤️</p>
+
+            <input
+                type="password"
+                id="pinInput"
+                maxlength="6"
+                placeholder="******">
+
+            <button onclick="cekPin()">
+
+                <i class="fa-solid fa-heart"></i>
+
+                Masuk
+
+            </button>
+
+            <p id="salahsayang"></p>
+
+        </div>
+
+    </div>
+
+    <!-- ================= LOADING ================= -->
+
+    <div id="loading">
+
+        <div class="loading-card">
+
+            <h1>Hai Sayang ❤️</h1>
+
+            <p>
+
+                Ada sesuatu yang ingin busu kasih
+                khusus untuk unggal...
+
+            </p>
+
+            <button onclick="mulai()">
+
+                🎁 Buka Surprise
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- ================= CONTENT ================= -->
+
+    <div id="content">
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+    <div class="pattern"></div>
+    <div class="dots"></div>
+
+            <h1>
+
+                Happy Birthday Unggal izaa
+
+            </h1>
+
+            <h2>❤️ Unggal Acu ❤️</h2>
+
+            <p id="typing"></p>
+
+        </section>
+
+        <!-- FOTO -->
+
+        <section class="gallery">
+
+            <h2>
+
+                <i class="fa-solid fa-camera"></i>
+
+                Kenangan foto rendom
+
+            </h2>
+
+            <div class="grid">
+
+                <img src="WhatsApp Image 2026-07-13 at 15.00.52.jpeg">
+
+                <img src="WhatsApp Image 2026-07-13 at 15.01.37.jpeg">
+
+                <img src="WhatsApp Image 2026-07-13 at 15.01.29.jpeg">
+
+                <img src="WhatsApp Image 2026-07-13 at 15.01.30.jpeg">
+
+            </div>
+
+        </section>
+
+        <section class="video">
+
+    <h2>🎥 Video simulasi keluarga cemara</h2>
+
+    <video controls autoplay muted loop>
+
+        <source src="WhatsApp Video 2026-07-13 at 15.02.21.mp4" type="video/mp4">
+
+    </video>
+
+</section>
+
+<section class="video">
+
+    <h2>🎥 Video Random kita</h2>
+
+    <video controls autoplay muted loop>
+
+        <source src="WhatsApp Video 2026-07-13 at 15.20.33.mp4">
+
+    </video>
+
+</section>
+
+        <!-- SURAT -->
+
+        <section class="surat">
+
+            <h2>
+
+                💌 Surat Untuk Unggal
+
+            </h2>
+
+            <p>
+
+                Selamat ulang tahun, unggal acu. 🤍🎂
+
+                Semoga di usia yang baru ini semua impian, harapan, dan cita-cita unggal satu per satu bisa menjadi kenyataan. Semoga setiap langkah yang unggal ambil selalu dipermudah, diberikan kesehatan, rezeki yang melimpah, umur yang panjang, dan selalu dikelilingi orang-orang yang tulus menyayangi unggal.
+
+                Terima kasih ya sayang, karena sudah pernah hadir dan menjadi bagian yang sangat berarti dalam hidup busu. Terima kasih untuk semua tawa, cerita, perhatian, dan kenangan indah yang sudah kita lewati bersama. Semua itu akan selalu busu simpan sebagai sesuatu yang sangat berharga.
+
+                Busu juga mau minta maaf atas semua kesalahan busu. Maaf kalau selama ini busu sering bercanda yang ternyata unggal tidak suka, maaf kalau sikap busu kadang bikin unggal kecewa, dan maaf belakangan ini busu terlihat cuek. Sebenarnya semua itu busu lakukan cuma supaya kejutan ulang tahun ini berhasil dan bisa membuat unggal tersenyum. Busu sama sekali tidak pernah berniat menjauh atau membuat unggal sedih.
+
+                Busu berharap unggal bisa menjadi pribadi yang semakin baik setiap harinya. Semoga unggal juga bisa mulai mengurangi rokok ya sayang, karena busu ingin unggal selalu sehat, kuat, dan bisa menikmati masa depan yang panjang dengan penuh kebahagiaan. Tolong jaga diri baik-baik ya, karena kesehatan unggal sangat berarti buat busu.
+
+                Apa pun yang terjadi nanti, busu akan selalu mendoakan yang terbaik untuk unggal. Semoga unggal selalu bahagia, sukses dalam segala hal, dimudahkan setiap urusannya, dan selalu diberikan kekuatan ketika menghadapi cobaan. Jangan pernah menyerah ya sayang, karena busu yakin unggal adalah orang yang hebat dan mampu melewati semuanya.
+
+                Mungkin busu tidak selalu bisa menjadi orang yang paling sempurna buat unggal. Tapi satu hal yang ingin unggal tahu, perasaan sayang busu itu tulus. Busu bersyukur pernah dipertemukan dengan orang sebaik unggal. Terima kasih sudah menjadi seseorang yang pernah mengisi hari-hari busu dengan begitu banyak kebahagiaan.
+
+                Dan satu lagi yang ingin busu bilang... busu gak akan ninggalin unggal. Busu akan tetap ada, tetap mendoakan, tetap peduli, dan tetap berharap yang terbaik untuk unggal, apa pun keadaannya.
+
+                Sekali lagi, selamat ulang tahun ya sayangku, cintakuuuu. ❤️
+
+                Semoga setiap doa yang belum sempat terucap dikabulkan oleh Allah, setiap air mata diganti dengan kebahagiaan, setiap lelah diganti dengan keberhasilan, dan semoga suatu hari nanti unggal bisa melihat kembali hari ini sebagai awal dari kehidupan yang lebih indah.
+
+                Happy Birthday, sayangku. Terima kasih sudah menjadi bagian dari cerita hidup busu. I love you so much, lebih dari yang bisa busu ungkapkan dengan kata-kata. Semoga kita selalu diberi kesempatan untuk terus saling menjaga, saling menguatkan, dan menciptakan lebih banyak kenangan indah bersama. ❤️🎉
+
+
+            </p>
+
+        </section>
+
+        <!-- HADIAH -->
+
+        <section class="gift">
+
+            <h2>
+
+                🎁 Hadiah Untukmu
+
+            </h2>
+
+            <button onclick="hadiah()">
+
+                Klik Disini ❤️
+
+            </button>
+
+        </section>
+
+        
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            Dibuat dengan ❤️ oleh Busu
+
+        </footer>
+
+    </div>
+
+    <!-- LOVE EFFECT -->
+
+    <div id="love-container"></div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
